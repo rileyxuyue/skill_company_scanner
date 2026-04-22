@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>云天励飞 — 月球无限公司扫描报告</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#F4F5FA;--w:#FFF;--d:#111827;--m:#6B7280;--g:#059669;--gbg:#ECFDF5;--gbd:#A7F3D0;--r:#DC2626;--rbg:#FEF2F2;--rbd:#FECACA;--b:#4F46E5;--f:'Inter','PingFang SC',-apple-system,sans-serif;--rd:22px;--sh:0 1px 4px rgba(0,0,0,.04),0 2px 12px rgba(0,0,0,.03);--shl:0 8px 30px -8px rgba(0,0,0,.1),0 2px 8px rgba(0,0,0,.04)}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--f);background:var(--bg);color:var(--d);line-height:1.7;-webkit-font-smoothing:antialiased;font-size:15px}
+.ctr{max-width:920px;margin:0 auto;padding:0 24px}
+
+/* ── Hero ── */
+.hero{background:url('hero-bg.png') center/cover no-repeat;padding:76px 0 60px;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:rgba(5,5,20,.65);backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px)}
+.hero-scan{position:absolute;top:0;left:0;width:100%;height:2px;background:linear-gradient(90deg,transparent 0%,rgba(56,189,248,.3) 35%,rgba(99,102,241,.4) 55%,transparent 100%);animation:scan 5s linear infinite;box-shadow:0 0 12px rgba(56,189,248,.25);z-index:2}
+@keyframes scan{0%{top:-5px}100%{top:105%}}
+.hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(99,102,241,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(99,102,241,.035) 1px,transparent 1px);background-size:48px 48px;z-index:1;mask-image:linear-gradient(180deg,transparent,rgba(0,0,0,.3) 30%,rgba(0,0,0,.3) 70%,transparent)}
+.hero-corner{position:absolute;top:18px;left:18px;width:36px;height:36px;border-top:1.5px solid rgba(56,189,248,.25);border-left:1.5px solid rgba(56,189,248,.25);z-index:2}
+.hero-corner-br{position:absolute;bottom:18px;right:18px;width:36px;height:36px;border-bottom:1.5px solid rgba(56,189,248,.25);border-right:1.5px solid rgba(56,189,248,.25);z-index:2}
+.hero-i{position:relative;z-index:3}
+.hb{display:inline-flex;gap:6px;padding:6px 16px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.1);border-radius:100px;font-size:11px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:#fff;margin-bottom:22px;backdrop-filter:blur(8px)}
+.hero h1{font-size:46px;font-weight:900;color:#fff;letter-spacing:-1.5px;margin-bottom:10px;background:linear-gradient(135deg,#fff 60%,rgba(165,180,252,.8));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hs{font-size:16px;color:rgba(255,255,255,.5);margin-bottom:36px;max-width:720px;line-height:1.8}
+.hsts{display:flex;gap:14px;flex-wrap:wrap}
+.hst{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:16px 24px;min-width:130px;backdrop-filter:blur(12px);transition:all .3s}
+.hst:hover{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.15);transform:translateY(-2px)}
+.hst b{font-size:24px;font-weight:800;color:#fff;display:block;letter-spacing:-.5px}
+.hst span{font-size:11px;color:rgba(255,255,255,.35);margin-top:4px;display:block;letter-spacing:.3px}
+
+/* ── Cards ── */
+.sec{padding:12px 0}
+.ac{background:var(--w);border-radius:var(--rd);box-shadow:var(--sh);border:1px solid rgba(0,0,0,.04);margin-bottom:0;overflow:hidden;transition:all .35s cubic-bezier(.25,.8,.25,1);position:relative}
+.ac:hover{box-shadow:var(--shl);transform:translateY(-3px)}
+.ac::after{content:'';position:absolute;bottom:-380px;left:50%;transform:translateX(-50%);width:760px;height:760px;border-radius:50%;background:radial-gradient(circle at 48% 38%,rgba(253,230,138,.09) 0%,rgba(251,191,36,.06) 30%,rgba(245,158,11,.035) 55%,transparent 75%);box-shadow:inset -12px -12px 40px rgba(217,170,60,.04),inset 20px 20px 60px rgba(253,230,138,.05);pointer-events:none;z-index:0}
+.ac::before{content:'';position:absolute;bottom:-60px;left:50%;transform:translateX(-50%);width:500px;height:200px;pointer-events:none;z-index:0;background:radial-gradient(ellipse 45px 35px at 30% 50%,rgba(217,170,60,.045),transparent 70%),radial-gradient(ellipse 60px 45px at 55% 35%,rgba(217,170,60,.035),transparent 70%),radial-gradient(ellipse 35px 28px at 75% 55%,rgba(245,158,11,.04),transparent 70%),radial-gradient(ellipse 25px 20px at 15% 40%,rgba(251,191,36,.03),transparent 70%),radial-gradient(ellipse 50px 38px at 65% 65%,rgba(217,170,60,.03),transparent 70%)}
+
+.ac-g{border-left:4px solid var(--g)}
+.ac-g .cn{background:linear-gradient(135deg,#059669,#34D399) !important;box-shadow:0 4px 14px rgba(5,150,105,.25)}
+.ac-g .ct{color:var(--g)}
+.ac-g .cs{color:#6EE7B7}
+.ac-r{border-left:4px solid var(--r)}
+.ac-r .cn{background:linear-gradient(135deg,#DC2626,#F87171) !important;box-shadow:0 4px 14px rgba(220,38,38,.25)}
+.ac-r .ct{color:var(--r)}
+.ac-r .cs{color:#FCA5A5}
+.ac-n{border-left:4px solid var(--b)}
+.ac-n .cn{background:linear-gradient(135deg,#4F46E5,#818CF8) !important;box-shadow:0 4px 14px rgba(79,70,229,.25)}
+.ac-n .ct{color:var(--b)}
+
+.ch{padding:32px 32px 0;display:flex;align-items:center;gap:18px}
+.cn{width:46px;height:46px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:17px;font-weight:800;flex-shrink:0;color:#fff;transition:transform .3s}
+.ac:hover .cn{transform:scale(1.08) rotate(-3deg)}
+.ct{font-size:22px;font-weight:800;letter-spacing:-.3px;transition:color .3s}
+.cs{font-size:13px;color:var(--m);margin-top:2px;font-weight:500;letter-spacing:.2px}
+.cb{padding:24px 32px 32px}
+.tx{font-size:15px;color:#4B5563;line-height:1.9}
+.tx b{color:var(--d);font-weight:700}
+.vd{display:inline-flex;align-items:center;gap:6px;padding:6px 16px;border-radius:100px;font-size:13px;font-weight:700;margin-top:20px;letter-spacing:.2px}
+.vg{background:linear-gradient(135deg,#ECFDF5,#D1FAE5);color:var(--g);border:1px solid var(--gbd)}
+.vr{background:linear-gradient(135deg,#FEF2F2,#FEE2E2);color:var(--r);border:1px solid var(--rbd)}
+
+.st{width:100%;border-collapse:collapse;margin:20px 0;font-size:14px;border-radius:12px;overflow:hidden}
+.st th{text-align:left;padding:12px 18px;background:#F9FAFB;font-weight:600;font-size:12px;text-transform:uppercase;letter-spacing:.5px;color:var(--m);border-bottom:2px solid #E5E7EB}
+.st td{padding:14px 18px;border-bottom:1px solid #F3F4F6;color:#4B5563}
+.st tr:last-child td{border-bottom:none}
+.st tr:hover td{background:#FAFBFF}
+.st .dm{font-weight:600;color:var(--d);white-space:nowrap}
+
+.ab{background:linear-gradient(135deg,#FFFBEB,#FEF3C7);border:1px solid #FDE68A;border-radius:18px;padding:28px;margin-top:24px;box-shadow:0 2px 12px rgba(251,191,36,.08)}
+.abt{font-size:16px;font-weight:800;color:#92400E;margin-bottom:12px;letter-spacing:-.2px}
+.abtx{font-size:15px;color:#78350F;line-height:1.9}
+
+.ct2{width:100%;border-collapse:collapse;font-size:14px;margin:16px 0;border-radius:12px;overflow:hidden}
+.ct2 th{text-align:left;padding:10px 14px;background:#F9FAFB;font-weight:600;font-size:12px;letter-spacing:.3px;color:var(--m);border-bottom:2px solid #E5E7EB}
+.ct2 td{padding:12px 14px;border-bottom:1px solid #F3F4F6;color:#4B5563}
+.ct2 tr:hover td{background:#FAFBFF}
+.ct2 .hl{font-weight:600;color:var(--b)}
+
+.hx{border-radius:16px;padding:20px 22px;margin:16px 0}
+.hxg{background:linear-gradient(135deg,#F0FDF4,#DCFCE7);border:1px solid #BBF7D0}
+.hxr{background:linear-gradient(135deg,#FEF2F2,#FEE2E2);border:1px solid #FECACA}
+.hxb{background:linear-gradient(135deg,#EFF6FF,#DBEAFE);border:1px solid #BFDBFE}
+.hx .hxt{font-size:15px;font-weight:700;margin-bottom:8px}
+.hx ul{font-size:14px;padding-left:18px;line-height:2}
+.hx li{color:#374151}
+
+.tm{background:linear-gradient(135deg,#FAFBFF,#F5F6FF);border-radius:16px;padding:22px;margin-bottom:16px;border:1px solid rgba(0,0,0,.04);transition:all .3s}
+.tm:hover{box-shadow:0 4px 16px rgba(0,0,0,.06)}
+
+.g3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin-bottom:20px}
+.stat-box{border-radius:16px;padding:22px;text-align:center;transition:all .3s;border:1px solid transparent}
+.stat-box:hover{transform:translateY(-2px);box-shadow:0 4px 14px rgba(0,0,0,.06)}
+.stat-num{font-size:30px;font-weight:800;display:block;letter-spacing:-1px}
+.stat-label{font-size:12px;color:#6B7280;margin-top:6px;display:block;font-weight:500}
+
+.footer{background:linear-gradient(135deg,#0F172A,#1E293B);padding:48px 0;text-align:center;margin-top:24px}
+.footer p{font-size:12px;color:rgba(255,255,255,.3);line-height:1.8;max-width:600px;margin:0 auto}
+
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.pros-cons-card{border-radius:16px;padding:22px;transition:all .3s;border:1px solid transparent}
+.pros-cons-card:hover{transform:translateY(-2px);box-shadow:0 4px 14px rgba(0,0,0,.05)}
+
+.watermark-layer{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:9999;overflow:hidden}
+.watermark-layer svg{width:100%;height:100%}
+
+.timeline{position:relative;padding:8px 0 4px 16px;margin:4px 0}
+.timeline::before{content:'';position:absolute;left:28px;top:0;bottom:0;width:2px;background:linear-gradient(180deg,#E5E7EB,#D1D5DB);border-radius:2px}
+.tl-item{display:flex;align-items:flex-start;gap:12px;position:relative;margin-bottom:16px}
+.tl-item:last-child{margin-bottom:0}
+.tl-dot{width:16px;flex-shrink:0;display:flex;justify-content:center;padding-top:13px}
+.tl-dot::after{content:'';width:10px;height:10px;border-radius:50%;background:#D1D5DB;border:2px solid #fff;box-shadow:0 0 0 2px #D1D5DB;display:block}
+.tl-dot-star::after{background:linear-gradient(135deg,#F59E0B,#FBBF24);box-shadow:0 0 0 2px #FDE68A,0 0 8px rgba(245,158,11,.35)}
+.tl-card{flex:1;background:#fff;border:1px solid #F3F4F6;border-radius:14px;padding:10px 16px;box-shadow:0 1px 4px rgba(0,0,0,.04);transition:all .25s}
+.tl-card:hover{box-shadow:0 4px 16px rgba(0,0,0,.08);transform:translateX(3px)}
+.tl-card-star{background:linear-gradient(135deg,#FFFBEB,#FEF9EC);border-color:#FDE68A;box-shadow:0 2px 8px rgba(245,158,11,.1)}
+.tl-card-star:hover{box-shadow:0 6px 20px rgba(245,158,11,.18);transform:translateX(3px)}
+.tl-header{display:flex;align-items:center;gap:10px;margin-bottom:4px}
+.tl-date{font-size:11px;font-weight:700;color:var(--m);letter-spacing:.3px;white-space:nowrap}
+.tl-round{font-size:11px;font-weight:700;color:#9CA3AF;letter-spacing:.4px;padding:1px 8px;background:#F3F4F6;border-radius:100px}
+.tl-lead{font-size:13.5px;font-weight:700;color:var(--d);line-height:1.6}
+.tl-amt{font-size:12px;color:var(--m);margin-top:3px;font-weight:500}
+.tl-hl{display:inline-block;background:linear-gradient(135deg,#FEF08A,#FDE047);color:#92400E;padding:1px 8px;border-radius:6px;font-weight:800;font-size:13px}
+.investor-hl{display:inline-block;background:linear-gradient(135deg,#FEF08A,#FDE047);color:#78350F;padding:1px 8px;border-radius:6px;font-weight:800;font-size:13px;margin-right:2px}
+
+.jc{font-size:14px;font-weight:800;margin:0 0 10px;display:flex;align-items:center;gap:7px;letter-spacing:-.1px;color:var(--d)}
+.jc span{font-size:16px}
+.job-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.job-cat{background:#FAFBFF;border:1px solid #F0F1F8;border-radius:16px;padding:18px 20px}
+.job-list{display:flex;flex-direction:column;gap:10px}
+.job-item{background:#fff;border:1px solid #F3F4F6;border-radius:12px;padding:10px 14px;transition:all .2s}
+.job-item:hover{box-shadow:0 4px 12px rgba(0,0,0,.06);transform:translateY(-1px)}
+.job-name{font-size:13px;font-weight:700;color:var(--d);margin-bottom:6px;display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+.job-meta{display:flex;align-items:center;gap:5px;flex-wrap:wrap}
+.job-meta .js{font-size:12px;font-weight:700;color:var(--g)}
+.job-edu{font-size:11px;color:var(--m);padding:2px 7px;background:#F3F4F6;border-radius:6px;font-weight:500}
+.jl{display:inline-flex;padding:2px 8px;border-radius:7px;font-size:11px;font-weight:600;background:#EEF2FF;color:#4F46E5}
+.jtag{display:inline-flex;padding:2px 8px;border-radius:7px;font-size:11px;font-weight:600}
+.jth{background:#FEF9EC;color:#B45309}
+.jtn{background:#EFF6FF;color:#2563EB}
+.jto{background:#F0FDF4;color:#059669}
+.pill{display:inline-flex;padding:5px 14px;border-radius:100px;font-size:12px;font-weight:600;border:1px solid;transition:all .2s}
+.pill:hover{transform:translateY(-1px)}
+
+@media(max-width:768px){
+.hero h1{font-size:32px}
+.hsts{gap:10px}
+.hst{min-width:100px;padding:12px 16px}
+.hst b{font-size:18px}
+.ch{padding:24px 20px 0;gap:14px}
+.cb{padding:18px 20px 26px}
+.cn{width:40px;height:40px;font-size:15px;border-radius:12px}
+.ct{font-size:17px}
+.ct2,.st{display:block;overflow-x:auto}
+.g2{grid-template-columns:1fr!important}
+.g3{grid-template-columns:1fr!important}
+.job-grid{grid-template-columns:1fr!important}
+.stat-num{font-size:26px}
+}
+</style>
+</head>
+<body>
+
+<div class="watermark-layer">
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+<defs>
+<pattern id="wm" x="0" y="0" width="220" height="140" patternUnits="userSpaceOnUse" patternTransform="rotate(-25)">
+<text x="10" y="70" fill="rgba(0,0,0,0.08)" font-size="16" font-family="'PingFang SC', 'Inter', sans-serif" font-weight="600" letter-spacing="4">@月球无限unlimited</text>
+</pattern>
+</defs>
+<rect width="100%" height="100%" fill="url(#wm)"/>
+</svg>
+</div>
+
+<header class="hero">
+<div class="hero-grid"></div>
+<div class="hero-scan"></div>
+<div class="hero-corner"></div>
+<div class="hero-corner-br"></div>
+<div class="ctr hero-i">
+<div class="hb">🌕 月球无限公司扫描报告</div>
+<h1>云天励飞</h1>
+<p class="hs">IntelliFusion — 中国首家实现国产高算力AI推理芯片商业化的公司，科创板上市（688343.SH），正冲刺港交所"A+H"双重上市。自研DeepEdge10系列NPU芯片覆盖8T-256T算力区间，已适配DeepSeek全系列模型。AI玩具销量中国第一、智能耳机模组出货量第一，从安防龙头转型AI芯片平台型公司。</p>
+<div class="hsts">
+<div class="hst"><b>~210亿</b><span>市值 (RMB)</span></div>
+<div class="hst"><b>科创板+冲港股</b><span>上市状态</span></div>
+<div class="hst"><b>900+人</b><span>公司规模</span></div>
+<div class="hst"><b>9.17亿</b><span>2024年营收</span></div>
+</div>
+</div>
+</header>
+
+<main class="ctr">
+
+<!-- ===== 0/ SUMMARY ===== -->
+<div class="sec">
+<div class="ac ac-n">
+<div class="ch"><div class="cn">0</div><div><div class="ct">综合评估摘要</div><div class="cs">Summary — 月球无限总结判断</div></div></div>
+<div class="cb">
+<table class="st"><thead><tr><th>维度</th><th>评估</th><th>判断</th></tr></thead><tbody>
+<tr><td class="dm">1. 商业理解</td><td>国产AI推理芯片+算法+大数据三位一体，业务清晰，应用场景广泛</td><td style="color:var(--g);font-weight:700">🟢 优势</td></tr>
+<tr><td class="dm">2. 竞争格局</td><td>NPU推理芯片中国第二，全场景AI推理中国前三，但面临英伟达、华为强劲竞争</td><td style="color:var(--g);font-weight:700">🟢 优势</td></tr>
+<tr><td class="dm">3. 上限分析</td><td>AI推理芯片万亿赛道+国产替代+大模型推理需求爆发</td><td style="color:var(--g);font-weight:700">🟢 优势</td></tr>
+<tr><td class="dm">4. 下限分析</td><td>持续亏损、客户集中度飙升、毛利率下滑，技术追赶压力大</td><td style="color:var(--r);font-weight:700">🔴 劣势</td></tr>
+<tr><td class="dm">5. 收入分解</td><td>营收高速增长至9.17亿，但消费级与企业级并重，结构健康度改善</td><td style="color:var(--g);font-weight:700">🟢 优势</td></tr>
+<tr><td class="dm">6. 财务质量</td><td>连续亏损，2024年亏5.72亿，毛利率从32%跌至21%</td><td style="color:var(--r);font-weight:700">🔴 劣势</td></tr>
+<tr><td class="dm">7. 管理团队</td><td>创始人佐治亚理工博士+20年半导体经验，技术判断力强</td><td style="color:var(--g);font-weight:700">🟢 优势</td></tr>
+<tr><td class="dm">8. 资本市场</td><td>科创板已上市+冲刺港股A+H，深创投等顶级机构背书</td><td style="color:var(--g);font-weight:700">🟢 优势</td></tr>
+<tr><td class="dm">9. 公司规模</td><td>900+人，489名研发人员占53.4%，全国多城布局</td><td style="color:var(--g);font-weight:700">🟢 优势</td></tr>
+<tr><td class="dm">10. 氛围文化</td><td>技术驱动、上市公司规范管理，但扩张期组织压力存在</td><td style="color:var(--g);font-weight:700">🟢 优势</td></tr>
+</tbody></table>
+<div class="ab">
+<div class="abt">💡 月球无限综合建议</div>
+<p class="abtx"><b>值得入职吗？</b> <u>推荐</u>。云天励飞是国内极少数同时具备AI算法+自研芯片+大数据平台的公司，科创板上市提供了稳定性保障，冲港股A+H意味着更大的资本运作空间。对AI芯片、嵌入式AI方向的技术人才非常友好。<br><br><b>成长空间？</b> <u>显著</u>。公司正从传统安防AI转型为通用AI推理芯片平台，消费级（AI玩具、耳机模组）和企业级（服务器、机器人）双线并进，业务天花板大幅提高。DeepEdge10系列芯片已进入商业化阶段，若港股上市成功，市值有望进一步提升。<br><br><b>⚠️ 风险提示：</b>公司尚未盈利，2022-2024年累计亏损超14亿元。毛利率持续下滑，客户集中度快速攀升（前五大客户收入占比84.2%）。AI推理芯片赛道竞争激烈，英伟达和华为海思是强劲对手。选择云天励飞意味着选择一个有上市背书但仍在亏损的科技公司，适合看好国产AI芯片长期价值的人。</p>
+</div>
+</div>
+</div>
+</div>
+
+<!-- ===== 1/ 商业理解 ===== -->
+<div class="sec">
+<div class="ac ac-g">
+<div class="ch"><div class="cn">1</div><div><div class="ct">商业理解</div><div class="cs">Business Understanding — 它做什么，谁付钱，为什么选它</div></div></div>
+<div class="cb">
+<p class="tx"><b>一句话解释：</b>云天励飞做的是"给AI设备装推理大脑"。它自主研发NPU驱动的AI推理芯片（DeepEdge系列），让各种智能设备能在本地高效运行AI模型——不用联网、不用云端、低功耗高性能。</p>
+<p class="tx" style="margin-top:14px"><b>解决什么问题？</b> AI大模型时代，推理算力成为刚需瓶颈。英伟达GPU太贵且受制裁限制，国产替代需求迫切。云天励飞的DeepEdge10系列芯片覆盖<b>8T至256T算力区间</b>，用"算力积木"架构灵活组合，满足从<b>边缘端（智能摄像头/玩具）</b>到<b>云端（服务器/大模型推理）</b>的全场景需求。</p>
+<p class="tx" style="margin-top:14px"><b>谁付钱？</b> 三大场景客户：①<b>消费级</b>（AI玩具、智能耳机模组，2025年上半年AI玩具销量中国第一）；②<b>企业级</b>（服务器、机器人、边缘网关）；③<b>行业级</b>（智慧安防、智慧交通、智慧城市，服务全国100+城市）。</p>
+<p class="tx" style="margin-top:14px"><b>为什么选它而不是别人？</b> ①国内<b>首家实现国产高算力AI推理芯片商业化</b>的公司；②全球<b>首批推出NPU驱动AI推理芯片</b>并实现市场化落地的企业之一；③<b>唯一</b>同时具备AI算法平台+AI芯片平台+大数据平台的国内企业；④已完成<b>DeepSeek全系列模型适配</b>和<b>鸿蒙系统适配</b>。</p>
+<div class="vd vg">🟢 优势项 — 全栈AI能力+国产芯片先发+消费/企业/行业三线布局</div>
+</div>
+</div>
+</div>
+
+<!-- ===== 2/ 竞争格局 ===== -->
+<div class="sec">
+<div class="ac ac-g">
+<div class="ch"><div class="cn">2</div><div><div class="ct">竞争格局</div><div class="cs">Competitive Landscape — 主要对手对比</div></div></div>
+<div class="cb">
+<p class="tx" style="margin-bottom:16px">AI推理芯片赛道呈现"国际巨头+国内新势力"的竞争格局。按2024年中国市场相关收入，云天励飞位列<b>全场景AI推理前三</b>、<b>NPU驱动AI推理芯片第二</b>。</p>
+<table class="ct2"><thead><tr><th>企业</th><th>市场地位</th><th>核心产品</th><th>优势</th></tr></thead><tbody>
+<tr><td class="hl">英伟达</td><td>全球第一</td><td>H100/A100 GPU</td><td>生态碾压，CUDA生态壁垒</td></tr>
+<tr><td class="hl">华为海思</td><td>中国第一</td><td>昇腾系列NPU</td><td>全栈自研+国家队背书</td></tr>
+<tr><td class="hl">百度昆仑芯</td><td>中国前三</td><td>昆仑芯2代</td><td>大模型生态+百度场景</td></tr>
+<tr><td class="hl">寒武纪</td><td>训练+推理</td><td>思元系列</td><td>科创板上市，政务/数据中心</td></tr>
+<tr><td class="hl">地平线</td><td>自动驾驶芯片</td><td>征程系列</td><td>车规级AI芯片龙头</td></tr>
+<tr><td style="font-weight:700;color:var(--g)">云天励飞</td><td>推理芯片前三</td><td>DeepEdge10系列</td><td>全栈AI+国产工艺+"算力积木"架构</td></tr>
+</tbody></table>
+<div class="hx hxg"><div class="hxt" style="color:#059669">✅ 云天励飞的竞争优势</div><ul>
+<li>国内<b>唯一同时拥有AI算法+AI芯片+大数据三大平台</b>的企业</li>
+<li>DeepEdge10采用<b>全国产14nm Chiplet工艺</b>，不受海外制裁影响</li>
+<li>"算力积木"架构可<b>灵活扩展8T-256T</b>，覆盖端边云全场景</li>
+<li>消费级突破显著：AI玩具销量第一，智能耳机模组出货量第一</li>
+</ul></div>
+<div class="hx hxr"><div class="hxt" style="color:#DC2626">⚠️ 相对劣势</div><ul>
+<li>与英伟达和华为的<b>绝对算力差距巨大</b>，生态成熟度不可比</li>
+<li>寒武纪在政务/国产替代领域的<b>品牌认知更强</b></li>
+<li>毛利率仅20.9%，远低于芯片行业50%+的平均水平</li>
+</ul></div>
+<div class="vd vg">🟢 优势项 — NPU推理芯片国内第二，差异化全栈能力构成独特壁垒</div>
+</div>
+</div>
+</div>
+
+<!-- ===== 3/ 上限分析 ===== -->
+<div class="sec">
+<div class="ac ac-g">
+<div class="ch"><div class="cn">3</div><div><div class="ct">上限分析</div><div class="cs">Ceiling Analysis — 行业天花板与增长空间</div></div></div>
+<div class="cb">
+<p class="tx"><b>行业状态：</b>AI推理芯片被视为大模型时代的"算力基础设施"。随着DeepSeek等模型推动推理需求爆发，推理算力的市场增速已超过训练算力。</p>
+<div class="hx hxb" style="margin-top:16px"><div class="hxt" style="color:#2563EB">📊 市场规模预测</div><ul>
+<li>2024年中国AI芯片市场：<b>~1500亿元</b></li>
+<li>2030年全球AI推理芯片市场预计：<b>超5000亿美元</b></li>
+<li>推理占AI算力需求比例：从2023年60%提升至2028年预估<b>80%+</b></li>
+</ul></div>
+<p class="tx" style="margin-top:16px"><b>有利趋势：</b>①<b>国产替代加速</b>——美国对华AI芯片出口限制持续升级，国产AI芯片需求暴增；②<b>大模型推理需求爆发</b>——DeepSeek等模型普及推动端侧/边缘推理芯片需求；③<b>具身智能+机器人</b>赛道兴起为推理芯片开辟新场景；④消费级AI产品（玩具/耳机/眼镜）快速增长。</p>
+<p class="tx" style="margin-top:14px"><b>不利因素：</b>①英伟达和华为的生态壁垒难以逾越；②国产芯片同质化竞争加剧；③下游客户付费意愿受经济环境影响。</p>
+<p class="tx" style="margin-top:14px"><b>云天励飞的天花板：</b>如果DeepEdge系列成为国产AI推理芯片标准平台之一，公司有机会从210亿市值成长为<b>500-1000亿</b>级别。</p>
+<div class="vd vg">🟢 优势项 — 国产替代+大模型推理爆发+消费级AI兴起，三重增长引擎</div>
+</div>
+</div>
+</div>
+
+<!-- ===== 4/ 下限分析 ===== -->
+<div class="sec">
+<div class="ac ac-r">
+<div class="ch"><div class="cn">4</div><div><div class="ct">下限分析</div><div class="cs">Floor Analysis — 最大风险与最坏情况</div></div></div>
+<div class="cb">
+<div class="hx hxr"><div class="hxt" style="color:#DC2626">🔴 核心风险清单</div><ul>
+<li><b>持续亏损：</b>2022-2024年累计亏损超<b>14亿元</b>，尚未看到盈利拐点</li>
+<li><b>毛利率下滑：</b>从2022年的31.9%下降至2024年的20.9%，盈利能力恶化</li>
+<li><b>客户集中度飙升：</b>前五大客户收入占比从49%升至<b>84.2%</b>，依赖风险极高</li>
+<li><b>巨头碾压：</b>英伟达和华为在生态、算力、客户资源上的优势短期内无法撼动</li>
+<li><b>融资依赖：</b>公司尚不能自我造血，冲港股部分目的是补充资金</li>
+<li><b>安防业务萎缩：</b>传统智慧城市/安防业务面临政府预算收紧压力</li>
+</ul></div>
+<p class="tx" style="margin-top:16px"><b>最坏情况：</b>若AI芯片业务进展不及预期、消费级业务增长放缓、港股上市受阻，公司可能陷入"营收增长但亏损加大"的恶性循环。参考寒武纪上市后长期亏损+股价大幅波动的先例。</p>
+<div class="vd vr">🔴 劣势项 — 持续亏损、毛利率下滑、客户集中度高、巨头竞争压力</div>
+</div>
+</div>
+</div>
+
+<!-- ===== 5/ 收入分解 ===== -->
+<div class="sec">
+<div class="ac ac-g">
+<div class="ch"><div class="cn">5</div><div><div class="ct">收入分解</div><div class="cs">Revenue Breakdown — 钱从哪来，增长是否可持续</div></div></div>
+<div class="cb">
+<p class="tx">云天励飞营收从2022年5.46亿增长到2024年<b>9.17亿</b>（+68%），结构从纯企业级向消费级+企业级双轮驱动转型。</p>
+<table class="ct2" style="margin-top:16px"><thead><tr><th>收入来源</th><th>占比(2025Q1)</th><th>增长趋势</th><th>说明</th></tr></thead><tbody>
+<tr><td><b>企业级场景</b></td><td>47.3%</td><td>📈 稳健增长</td><td>服务器、机器人、边缘网关等B端客户</td></tr>
+<tr><td><b>消费级场景</b></td><td>42.5%</td><td>📈 快速增长</td><td>AI玩具、智能耳机模组（出货量第一）</td></tr>
+<tr><td><b>行业级场景</b></td><td>~10%</td><td>📉 收缩</td><td>传统智慧安防/城市，政府预算收紧</td></tr>
+</tbody></table>
+<div class="hx hxb"><div class="hxt" style="color:#2563EB">📊 营收趋势</div><ul>
+<li><b>2022年：</b>5.46亿元</li>
+<li><b>2023年：</b>5.06亿元（同比-7.3%，行业调整期）</li>
+<li><b>2024年：</b>9.17亿元（<b>同比+81.2%</b>，强劲反弹）</li>
+<li><b>2025年Q1：</b>2.64亿元（良好开局）</li>
+</ul></div>
+<p class="tx" style="margin-top:16px"><b>关键看点：</b>消费级业务的崛起是最大亮点——AI玩具和智能耳机模组的爆发使公司摆脱了对政务安防的单一依赖。但客户集中度风险（前五大客户84.2%）需要高度关注。</p>
+<div class="vd vg">🟢 优势项 — 营收81%高速增长，消费级+企业级双轮驱动结构优化</div>
+</div>
+</div>
+</div>
+
+<!-- ===== 6/ 财务质量 ===== -->
+<div class="sec">
+<div class="ac ac-r">
+<div class="ch"><div class="cn">6</div><div><div class="ct">财务质量</div><div class="cs">Financial Quality — 盈利能力与财务健康度</div></div></div>
+<div class="cb">
+<p class="tx"><b>当前盈利状态：</b>❌ 未盈利。公司自上市以来持续亏损。</p>
+<div class="hx hxb" style="margin-top:16px"><div class="hxt" style="color:#2563EB">📊 财务关键指标</div><ul>
+<li><b>2022年亏损：</b>4.48亿元 | 毛利率 31.9%</li>
+<li><b>2023年亏损：</b>3.84亿元 | 毛利率 23.5%</li>
+<li><b>2024年亏损：</b>5.72亿元 | 毛利率 20.9%</li>
+<li><b>2025年Q1亏损：</b>0.86亿元 | 毛利率 28.8%（回暖）</li>
+<li><b>研发费用（2024）：</b>4.00亿元（营收的43.6%）</li>
+</ul></div>
+<p class="tx" style="margin-top:16px"><b>分析：</b></p>
+<ul style="font-size:14px;color:#4B5563;padding-left:22px;line-height:2.1">
+<li><b>毛利率持续下滑</b>是最大隐忧：从32%→21%，说明产品定价能力弱化，竞争压力加大</li>
+<li><b>2025年Q1毛利率回升至28.8%</b>，可能是产品结构改善的信号</li>
+<li><b>研发投入占比高达44%</b>，符合芯片公司特征但加剧短期亏损</li>
+<li><b>港股上市</b>的核心目的之一是补充资金，减轻财务压力</li>
+<li><b>盈利拐点预估：</b>若消费级业务持续放量，最快2026-2027年有望实现季度盈利</li>
+</ul>
+<div class="vd vr">🔴 劣势项 — 连续亏损加大，毛利率下滑严重，盈利拐点仍需等待</div>
+</div>
+</div>
+</div>
+
+<!-- ===== 7/ 管理团队 ===== -->
+<div class="sec">
+<div class="ac ac-g">
+<div class="ch"><div class="cn">7</div><div><div class="ct">管理团队</div><div class="cs">Leadership — 创始人背景、经历与愿景</div></div></div>
+<div class="cb">
+
+<div class="tm" style="border-left:4px solid #059669">
+<div style="display:flex;align-items:center;gap:14px;margin-bottom:12px">
+<div style="width:48px;height:48px;border-radius:14px;background:linear-gradient(135deg,#059669,#34D399);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:18px;box-shadow:0 4px 12px rgba(5,150,105,.2)">陈</div>
+<div><div style="font-size:17px;font-weight:800;color:var(--d)">陈宁 — 创始人、董事长兼总经理</div>
+<div style="display:flex;gap:6px;flex-wrap:wrap;margin-top:6px">
+<span style="display:inline-flex;padding:3px 10px;border-radius:8px;font-size:11px;font-weight:700;background:linear-gradient(135deg,#EEF2FF,#E0E7FF);color:#4338CA;border:1px solid #C7D2FE">🎓 上海交通大学 · 电气工程本科</span>
+<span style="display:inline-flex;padding:3px 10px;border-radius:8px;font-size:11px;font-weight:700;background:linear-gradient(135deg,#FEF9EC,#FEF08A);color:#92400E;border:1px solid #FDE68A">🎓 佐治亚理工学院 · 电气工程博士</span>
+<span style="display:inline-flex;padding:3px 10px;border-radius:8px;font-size:11px;font-weight:700;background:#F3F4F6;color:#374151">近20年半导体经验</span>
+</div></div>
+</div>
+<div style="background:linear-gradient(135deg,#EEF2FF,#F5F3FF);border:1px solid #E0E7FF;border-radius:12px;padding:12px 16px;margin-bottom:10px">
+<div style="font-size:12px;font-weight:700;color:#4338CA;margin-bottom:6px">📚 学术贡献与行业地位</div>
+<p style="font-size:13px;color:#4B5563;line-height:1.8;margin:0">佐治亚理工学院（Georgia Tech）电气工程博士，全球顶尖工科院校。拥有<b>近20年半导体行业经验</b>，曾任<b>飞思卡尔半导体系统架构师</b>、<b>中兴通讯技术总监</b>。是最早将NPU（神经网络处理器）技术理念引入国内并实现商业化的核心人物之一。作为<b>国家特聘专家</b>，在AI芯片架构设计领域拥有深厚积累。</p>
+</div>
+<p class="tx">2014年回国创办云天励飞，从零打造国产AI推理芯片体系。公开愿景：<b>"以AI芯片为核心，推动AI的大规模落地应用"</b>。</p>
+</div>
+
+<div class="tm" style="border-left:4px solid #7C3AED">
+<div style="display:flex;align-items:center;gap:14px;margin-bottom:12px">
+<div style="width:48px;height:48px;border-radius:14px;background:linear-gradient(135deg,#7C3AED,#A78BFA);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:18px;box-shadow:0 4px 12px rgba(124,58,237,.2)">李</div>
+<div><div style="font-size:17px;font-weight:800;color:var(--d)">李爱军 — 副总经理、首席科技官</div>
+<div style="display:flex;gap:6px;flex-wrap:wrap;margin-top:6px">
+<span style="display:inline-flex;padding:3px 10px;border-radius:8px;font-size:11px;font-weight:700;background:linear-gradient(135deg,#EEF2FF,#E0E7FF);color:#4338CA;border:1px solid #C7D2FE">🎓 西安电子科技大学 · 微电子硕士</span>
+<span style="display:inline-flex;padding:3px 10px;border-radius:8px;font-size:11px;font-weight:700;background:#F3F4F6;color:#374151">前中兴微电子主管</span>
+</div></div>
+</div>
+<p class="tx">西安电子科技大学光电学学士及微电子与固体电子学硕士。曾担任<b>中兴微电子部门主管</b>，2017年加入云天励飞。负责DeepEdge系列芯片从架构设计到量产的全流程技术路线。</p>
+</div>
+
+<div class="hx hxg" style="margin-top:20px"><div class="hxt" style="color:#059669">✅ 团队评估亮点</div><ul>
+<li>创始人<b>佐治亚理工博士</b>+飞思卡尔+中兴，半导体行业20年老兵</li>
+<li>CTO具备<b>中兴微电子</b>芯片设计实战经验</li>
+<li>团队中<b>超50人拥有10年以上芯片设计经验</b></li>
+<li>科创板上市公司的管理团队稳定性和规范性有保障</li>
+</ul></div>
+<div class="vd vg">🟢 优势项 — 创始人学术+产业双重背景顶级，团队芯片设计经验深厚</div>
+</div>
+</div>
+</div>
+
+<!-- ===== 8/ 资本市场 ===== -->
+<div class="sec">
+<div class="ac ac-g">
+<div class="ch"><div class="cn">8</div><div><div class="ct">资本市场与估值</div><div class="cs">Capital Market — 上市历程、投资方、港股展望</div></div></div>
+<div class="cb">
+<p class="tx" style="margin-bottom:20px"><b>资本之路：</b>2014年成立，历经多轮融资，2023年科创板上市，2025年7月递表港交所冲刺<b>"A+H"双重上市</b>。</p>
+
+<div class="timeline">
+  <div class="tl-item">
+    <div class="tl-dot"></div>
+    <div class="tl-card">
+      <div class="tl-header"><span class="tl-date">2014</span><span class="tl-round">天使轮</span></div>
+      <div class="tl-lead">真格基金 · 创新工场</div>
+      <div class="tl-amt">数千万</div>
+    </div>
+  </div>
+  <div class="tl-item">
+    <div class="tl-dot"></div>
+    <div class="tl-card">
+      <div class="tl-header"><span class="tl-date">2015</span><span class="tl-round">A轮</span></div>
+      <div class="tl-lead">深创投 · 芳晟股权</div>
+      <div class="tl-amt">数亿</div>
+    </div>
+  </div>
+  <div class="tl-item">
+    <div class="tl-dot"></div>
+    <div class="tl-card">
+      <div class="tl-header"><span class="tl-date">2017</span><span class="tl-round">B轮</span></div>
+      <div class="tl-lead">中国光大控股 · 前海金控</div>
+      <div class="tl-amt">数亿</div>
+    </div>
+  </div>
+  <div class="tl-item">
+    <div class="tl-dot"></div>
+    <div class="tl-card">
+      <div class="tl-header"><span class="tl-date">2018</span><span class="tl-round">C轮</span></div>
+      <div class="tl-lead">多家机构</div>
+      <div class="tl-amt">数亿元</div>
+    </div>
+  </div>
+  <div class="tl-item tl-star">
+    <div class="tl-dot tl-dot-star"></div>
+    <div class="tl-card tl-card-star">
+      <div class="tl-header"><span class="tl-date">2023.04</span><span class="tl-round">科创板IPO</span></div>
+      <div class="tl-lead"><span class="tl-hl">⭐ 上交所科创板上市（688343.SH）</span></div>
+      <div class="tl-amt">累计融资超30亿元</div>
+    </div>
+  </div>
+  <div class="tl-item tl-star">
+    <div class="tl-dot tl-dot-star"></div>
+    <div class="tl-card tl-card-star">
+      <div class="tl-header"><span class="tl-date">2025.07</span><span class="tl-round">递表港交所</span></div>
+      <div class="tl-lead"><span class="tl-hl">⭐ 冲刺"A+H"双重上市</span></div>
+      <div class="tl-amt">市值约210亿</div>
+    </div>
+  </div>
+</div>
+
+<div class="hx hxg" style="margin-top:20px"><div class="hxt" style="color:#059669">⭐ 主要投资方/股东</div><ul>
+<li><span class="investor-hl">深创投</span> — 国内最大本土VC，早期投资方，政府背景</li>
+<li><span class="investor-hl">中国光大控股</span> — 央企旗下投资平台</li>
+<li><span class="investor-hl">真格基金</span> — 天使轮领投，徐小平旗下</li>
+<li><span class="investor-hl">创新工场</span> — 李开复旗下，AI赛道布局标杆</li>
+<li><b>前海金控</b> — 深圳前海国资</li>
+<li><b>招商银行</b> — 战略投资</li>
+<li><b>中信证券</b> — 机构投资</li>
+</ul></div>
+<p class="tx" style="margin-top:16px"><b>港股上市展望：</b>若A+H成功，云天励飞将成为AI推理芯片赛道的稀缺"双上市"标的，有助于提升国际资本市场认知度、补充资金、支撑海外业务拓展。</p>
+<div class="vd vg">🟢 优势项 — 科创板已上市+冲港股，深创投+光大+真格顶级资方背书</div>
+</div>
+</div>
+</div>
+
+<!-- ===== 9/ 公司规模 ===== -->
+<div class="sec">
+<div class="ac ac-g">
+<div class="ch"><div class="cn">9</div><div><div class="ct">公司规模</div><div class="cs">Company Scale — 人数、研发密度、布局</div></div></div>
+<div class="cb">
+<div class="g3">
+<div class="stat-box" style="background:linear-gradient(135deg,#EEF2FF,#E0E7FF)"><span class="stat-num" style="color:#4338CA">900+</span><span class="stat-label">总员工数</span></div>
+<div class="stat-box" style="background:linear-gradient(135deg,#ECFDF5,#D1FAE5)"><span class="stat-num" style="color:#059669">489人</span><span class="stat-label">研发人员（53.4%）</span></div>
+<div class="stat-box" style="background:linear-gradient(135deg,#FEF3C7,#FDE68A)"><span class="stat-num" style="color:#92400E">192+</span><span class="stat-label">在招岗位（BOSS直聘）</span></div>
+</div>
+<p class="tx"><b>团队亮点：</b>489名研发人员中<b>超50人拥有10年以上芯片设计经验</b>，研发团队占总人数53.4%。2014年成立至今11年，从安防AI转型芯片平台，团队经历完整的技术周期。</p>
+<p class="tx" style="margin-top:14px"><b>办公布局：</b>总部深圳（研发+运营中心），成都、南京、上海、北京设有分支机构，覆盖全国主要科技城市。</p>
+<p class="tx" style="margin-top:14px"><b>招聘状态：</b>BOSS直聘显示192条在招职位，覆盖芯片设计、AI算法、软件开发、市场销售、职能管理等多个方向，薪资中位数30-50K+。</p>
+<div class="vd vg">🟢 优势项 — 研发人员占比超半数，芯片设计老兵团队，全国多城布局</div>
+</div>
+</div>
+</div>
+
+<!-- ===== 10/ 氛围文化 ===== -->
+<div class="sec">
+<div class="ac ac-g">
+<div class="ch"><div class="cn">10</div><div><div class="ct">氛围文化</div><div class="cs">Culture & Work-Life — 上市公司的稳定性与创业公司的挑战</div></div></div>
+<div class="cb">
+<p class="tx" style="margin-bottom:18px"><b>信息来源：</b>BOSS直聘员工评价（5条）、职友集数据、猎聘、招聘官网公开信息综合推断。</p>
+<div class="g2">
+<div class="pros-cons-card" style="background:linear-gradient(135deg,#F0FDF4,#DCFCE7);border:1px solid #BBF7D0">
+<div style="font-size:14px;font-weight:700;color:#059669;margin-bottom:10px">✅ 积极面</div>
+<ul style="font-size:13px;padding-left:18px;line-height:2.1;color:#374151">
+<li><b>上市公司背书</b> — 科创板上市，五险一金等基本保障完善</li>
+<li><b>技术导向</b> — 53.4%研发占比，工程师文化浓厚</li>
+<li><b>行业前沿</b> — AI芯片赛道，技术成就感强</li>
+<li><b>薪资水平</b> — 93.1%岗位月薪30-50K以上</li>
+<li><b>成长空间</b> — 公司从安防转型芯片平台，业务拓展带来新机会</li>
+</ul></div>
+<div class="pros-cons-card" style="background:linear-gradient(135deg,#FEF2F2,#FEE2E2);border:1px solid #FECACA">
+<div style="font-size:14px;font-weight:700;color:#DC2626;margin-bottom:10px">⚠️ 需留意</div>
+<ul style="font-size:13px;padding-left:18px;line-height:2.1;color:#374151">
+<li><b>招聘需求下降</b> — 2024年较2023年招聘量下降55%</li>
+<li><b>公司仍亏损</b> — 上市但未盈利，薪酬预算可能受限</li>
+<li><b>业务转型期</b> — 从安防转芯片，内部可能存在方向调整阵痛</li>
+<li><b>深圳效率</b> — 芯片公司+深圳 ≈ 高强度工作节奏</li>
+<li><b>员工评价稀少</b> — BOSS直聘仅5条评价，信息有限</li>
+</ul></div>
+</div>
+<p class="tx" style="margin-top:18px"><b>综合：</b>典型的<b>上市AI芯片公司</b>。比创业公司稳定（有科创板保障），比大厂灵活（900人规模），但面临亏损压力和业务转型期的不确定性。适合看好国产AI芯片方向、愿意在上市公司平台深耕技术的人。</p>
+<div class="vd vg">🟢 优势项 — 上市公司规范管理+技术导向文化+薪资水平不错</div>
+</div>
+</div>
+</div>
+
+<!-- ===== 11/ 在招岗位 ===== -->
+<div class="sec">
+<div class="ac ac-n">
+<div class="ch"><div class="cn">11</div><div><div class="ct">在招岗位介绍</div><div class="cs">Open Positions — 覆盖芯片/算法/软件/市场/职能，192+岗位</div></div></div>
+<div class="cb">
+
+<div class="job-grid">
+
+  <div class="job-cat">
+    <div class="jc"><span>🔧</span> 芯片设计</div>
+    <div class="job-list">
+      <div class="job-item">
+        <div class="job-name">数字IC设计工程师<span class="jtag jth">🔥 核心</span></div>
+        <div class="job-meta"><span class="js">40–80K</span><span class="jl">深圳</span><span class="job-edu">硕士</span></div>
+      </div>
+      <div class="job-item">
+        <div class="job-name">芯片验证工程师</div>
+        <div class="job-meta"><span class="js">35–70K</span><span class="jl">深圳</span><span class="job-edu">硕士</span></div>
+      </div>
+      <div class="job-item">
+        <div class="job-name">NPU架构师<span class="jtag jth">🔥 核心</span></div>
+        <div class="job-meta"><span class="js">50–100K</span><span class="jl">深圳</span><span class="job-edu">博士</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="job-cat">
+    <div class="jc"><span>🧠</span> AI算法</div>
+    <div class="job-list">
+      <div class="job-item">
+        <div class="job-name">大模型推理优化工程师</div>
+        <div class="job-meta"><span class="js">35–65K</span><span class="jl">深圳</span><span class="jl">北京</span><span class="job-edu">硕士</span></div>
+      </div>
+      <div class="job-item">
+        <div class="job-name">计算机视觉算法工程师</div>
+        <div class="job-meta"><span class="js">30–60K</span><span class="jl">深圳</span><span class="job-edu">硕士</span></div>
+      </div>
+      <div class="job-item">
+        <div class="job-name">嵌入式AI工程师</div>
+        <div class="job-meta"><span class="js">25–50K</span><span class="jl">深圳</span><span class="job-edu">本科</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="job-cat">
+    <div class="jc"><span>💻</span> 软件开发</div>
+    <div class="job-list">
+      <div class="job-item">
+        <div class="job-name">编译器开发工程师</div>
+        <div class="job-meta"><span class="js">35–70K</span><span class="jl">深圳</span><span class="job-edu">硕士</span></div>
+      </div>
+      <div class="job-item">
+        <div class="job-name">SDK开发工程师</div>
+        <div class="job-meta"><span class="js">25–50K</span><span class="jl">深圳</span><span class="job-edu">本科</span></div>
+      </div>
+      <div class="job-item">
+        <div class="job-name">后端开发工程师</div>
+        <div class="job-meta"><span class="js">20–40K</span><span class="jl">深圳</span><span class="job-edu">本科</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="job-cat">
+    <div class="jc"><span>💼</span> 市场 & 销售</div>
+    <div class="job-list">
+      <div class="job-item">
+        <div class="job-name">AI芯片解决方案经理<span class="jtag jth">🔥 热招</span></div>
+        <div class="job-meta"><span class="js">30–60K</span><span class="jl">深圳</span><span class="jl">上海</span><span class="job-edu">本科</span></div>
+      </div>
+      <div class="job-item">
+        <div class="job-name">海外市场拓展<span class="jtag jto">🌏 海外</span></div>
+        <div class="job-meta"><span class="js">面议</span><span class="jl">深圳</span><span class="job-edu">本科</span></div>
+      </div>
+      <div class="job-item">
+        <div class="job-name">大客户销售经理</div>
+        <div class="job-meta"><span class="js">25–50K</span><span class="jl">北京</span><span class="jl">上海</span><span class="job-edu">本科</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="job-cat">
+    <div class="jc"><span>📊</span> 职能支持</div>
+    <div class="job-list">
+      <div class="job-item">
+        <div class="job-name">HRBP</div>
+        <div class="job-meta"><span class="js">20–40K</span><span class="jl">深圳</span><span class="job-edu">本科</span></div>
+      </div>
+      <div class="job-item">
+        <div class="job-name">财务经理</div>
+        <div class="job-meta"><span class="js">25–45K</span><span class="jl">深圳</span><span class="job-edu">本科</span></div>
+      </div>
+      <div class="job-item">
+        <div class="job-name">知识产权专员</div>
+        <div class="job-meta"><span class="js">15–30K</span><span class="jl">深圳</span><span class="job-edu">本科</span></div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div style="background:linear-gradient(135deg,#F0FDF4,#DCFCE7);border:1px solid #BBF7D0;border-radius:16px;padding:22px;margin-top:8px">
+<div style="font-size:14px;font-weight:700;color:#166534;margin-bottom:10px">🎁 福利待遇</div>
+<div style="display:flex;gap:8px;flex-wrap:wrap">
+<span class="pill" style="background:#fff;color:#059669;border-color:#A7F3D0">五险一金</span>
+<span class="pill" style="background:#fff;color:#059669;border-color:#A7F3D0">股票期权</span>
+<span class="pill" style="background:#fff;color:#059669;border-color:#A7F3D0">绩效奖金</span>
+<span class="pill" style="background:#fff;color:#059669;border-color:#A7F3D0">年终奖</span>
+<span class="pill" style="background:#fff;color:#059669;border-color:#A7F3D0">补充医疗</span>
+<span class="pill" style="background:#fff;color:#059669;border-color:#A7F3D0">带薪年假</span>
+</div>
+</div>
+
+</div>
+</div>
+</div>
+
+</main>
+
+<footer class="footer">
+<div class="ctr">
+
+<p style="font-size:14px;font-weight:600;color:rgba(255,255,255,.5);letter-spacing:1px;margin-bottom:12px">🌕 月球无限公司扫描报告</p>
+<p>本报告基于公开信息整理，包括港交所招股书、科创板公告、芯东西、雷锋网、中国证券报、BOSS直聘、猎聘等平台数据。<br>所有数据仅供参考，不构成任何投资或求职建议。</p>
+<div style="width:60px;height:1px;background:rgba(255,255,255,.1);margin:16px auto"></div>
+<p>Generated on 2026-03-26</p>
+
+<div style="display:flex;justify-content:center;align-items:center;padding:24px 0 8px">
+<svg width="380" height="40" viewBox="0 0 380 40" xmlns="http://www.w3.org/2000/svg">
+<circle cx="20" cy="20" r="14" fill="none" stroke="rgba(255,255,255,.4)" stroke-width="1"/>
+<path d="M20,6 A14,14 0 0,1 20,34 A9,14 0 0,0 20,6Z" fill="rgba(255,255,255,.4)"/>
+<circle cx="62.5" cy="20" r="14" fill="none" stroke="rgba(255,255,255,.4)" stroke-width="1"/>
+<path d="M62.5,6 A14,14 0 0,1 62.5,34 A4,14 0 0,0 62.5,6Z" fill="rgba(255,255,255,.4)"/>
+<circle cx="105" cy="20" r="14" fill="none" stroke="rgba(255,255,255,.4)" stroke-width="1"/>
+<path d="M105,6 A14,14 0 0,1 105,34 A-3,14 0 0,0 105,6Z" fill="rgba(255,255,255,.4)"/>
+<circle cx="147.5" cy="20" r="14" fill="none" stroke="rgba(255,255,255,.4)" stroke-width="1"/>
+<path d="M147.5,6 A14,14 0 0,1 147.5,34 A-9,14 0 0,0 147.5,6Z" fill="rgba(255,255,255,.4)"/>
+<circle cx="190" cy="20" r="14" fill="rgba(255,255,255,.4)"/>
+<circle cx="232.5" cy="20" r="14" fill="none" stroke="rgba(255,255,255,.4)" stroke-width="1"/>
+<path d="M232.5,6 A14,14 0 0,0 232.5,34 A-9,14 0 0,1 232.5,6Z" fill="rgba(255,255,255,.4)"/>
+<circle cx="275" cy="20" r="14" fill="none" stroke="rgba(255,255,255,.4)" stroke-width="1"/>
+<path d="M275,6 A14,14 0 0,0 275,34 A-3,14 0 0,1 275,6Z" fill="rgba(255,255,255,.4)"/>
+<circle cx="317.5" cy="20" r="14" fill="none" stroke="rgba(255,255,255,.4)" stroke-width="1"/>
+<path d="M317.5,6 A14,14 0 0,0 317.5,34 A4,14 0 0,1 317.5,6Z" fill="rgba(255,255,255,.4)"/>
+<circle cx="360" cy="20" r="14" fill="none" stroke="rgba(255,255,255,.4)" stroke-width="1"/>
+<path d="M360,6 A14,14 0 0,0 360,34 A9,14 0 0,1 360,6Z" fill="rgba(255,255,255,.4)"/>
+</svg>
+</div>
+</div>
+</footer>
+
+</body>
+</html>
