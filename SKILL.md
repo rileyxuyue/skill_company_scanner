@@ -68,7 +68,7 @@ description: "公司深度扫描报告生成器。当用户输入一个公司名
 严格遵循以下设计要素，全部内联在 `<style>` 中（不依赖外部CSS）：
 
 **1. Hero 标题区域**
-- 使用城市夜景背景图 `hero-bg.png`（从skill的 `assets/` 目录复制到报告目录）
+- 使用城市夜景背景图 `hero-bg.png`（⚠️ 必须在生成HTML后执行 Phase 3.5 的复制命令，将 skill `assets/hero-bg.png` 复制到报告输出目录）
 - 65%透明度深色遮罩 + 3px 背景模糊
 - 扫描光条动画（`@keyframes scan`，5秒周期从上到下）
 - 网格线背景（48px间距，3.5%透明度）
@@ -173,9 +173,23 @@ description: "公司深度扫描报告生成器。当用户输入一个公司名
 | 岗位 | 5类×3个 | 3类×2个 |
 | 福利 | 7个标签 | 5个标签 |
 
+### ⚠️ Phase 3.5: 复制 Hero 背景图（必须执行！）
+
+**HTML 生成后、截图/PDF 之前，必须先将背景图复制到报告目录，否则 Hero 区域将无法显示背景图！**
+
+```bash
+cp {skill_base_dir}/assets/hero-bg.png {report_output_dir}/hero-bg.png
+```
+
+其中：
+- `{skill_base_dir}` 是本 skill 的安装目录（包含 `SKILL.md` 的目录）
+- `{report_output_dir}` 是报告 HTML 所在目录（即 `post/reports/{company-slug}/`）
+
+**验证**：确认报告目录下存在 `hero-bg.png` 文件后，再继续后续步骤。
+
 ### Phase 4: Mobile 截图
 
-Mobile HTML 生成后，将 `assets/hero-bg.png` 复制到报告同目录，然后运行移动端截图脚本：
+运行移动端截图脚本：
 
 ```bash
 python3 {skill_base_dir}/scripts/screenshot_mobile.py <mobile_html_path> <output_dir>
